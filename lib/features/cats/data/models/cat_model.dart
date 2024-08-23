@@ -1,5 +1,7 @@
 import 'package:cats_app/features/cats/domain/entities/cat.dart';
 
+import '../../../core/functions/general_functions.dart';
+
 class CatModel extends Cat {
   const CatModel({
     required super.id,
@@ -45,7 +47,7 @@ class CatModel extends Cat {
       strangerFriendly: json['stranger_friendly'],
       vocalisation: json['vocalisation'],
       wikipediaUrl: json['wikipedia_url'],
-      imageUrl: json['image'] != null ? json['image']['url'] : null,
+      imageUrl: GeneralFunctions.setImageRoute(json['reference_image_id']),
     );
   }
 
@@ -70,7 +72,7 @@ class CatModel extends Cat {
       'stranger_friendly': strangerFriendly,
       'vocalisation': vocalisation,
       'wikipedia_url': wikipediaUrl,
-      'image': imageUrl != null ? {'url': imageUrl} : null,
+      'image': imageUrl,
     };
   }
 }

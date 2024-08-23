@@ -27,10 +27,8 @@ class CatsRemoteDataSourceImpl implements CatsRemoteDataSource {
       headers: {'Content-Type': 'application/json'},
     );
     if(response.statusCode == 200){
-      final Map<String, dynamic> jsonMap =
-      json.decode(response.body);
-      Iterable i = jsonMap['results'];
-      return i.map((series) => CatModel.fromJson(series)).toList();
+      final List<dynamic> jsonList = json.decode(response.body);
+      return jsonList.map((json) => CatModel.fromJson(json)).toList();
     } else {
       throw ServerException('Bad Status Code');
     }

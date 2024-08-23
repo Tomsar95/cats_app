@@ -1,6 +1,8 @@
 import 'package:cats_app/features/cats/domain/entities/cat.dart';
+import 'package:cats_app/features/core/utils/custom_arguments.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/custom_colors.dart';
 import '../../../../core/utils/custom_navigator.dart';// Asegúrate de importar el modelo correcto
 
 class CatsList extends StatelessWidget {
@@ -15,37 +17,58 @@ class CatsList extends StatelessWidget {
         itemCount: catsList.length,
         itemBuilder: (context, index) {
           final cat = catsList[index];
-          return Card(
-            margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
-            child: ListTile(
-              contentPadding: const EdgeInsets.all(10.0),
-              leading: Image.network(
-                cat.imageUrl ?? '',
-                width: 80,
-                height: 80,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => Icon(Icons.error),
+          return GestureDetector(
+            onTap: () => _goToDetails(context, cat),
+            child: Card(
+              color: CustomColors.lightGray,
+              margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.zero,
+                side: BorderSide(
+                  color: Colors.black,
+                  width: 1.0,
+                ),
               ),
-              title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    cat.name,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                  const Text('Más...', style: TextStyle(color: Colors.blue)),
-                ],
-              ),
-              subtitle: Column(
+              elevation: 0,
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Pais de origen: ${cat.origin ?? "Desconocido"}'),
-                  Text('Inteligencia: ${cat.intelligence ?? "Desconocido"}'),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      cat.name,
+                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Image.network(
+                    cat.imageUrl ?? '',
+                    width: double.infinity,
+                    height: 200,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => const Icon(Icons.error),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Pais de origen: ${cat.origin ?? "Desconocido"}'),
+                        Text('Inteligencia: ${cat.intelligence ?? "Desconocido"}'),
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'Más...',
+                        style: TextStyle(color: CustomColors.black),
+                      ),
+                    ),
+                  ),
                 ],
               ),
-              onTap: () {
-                _goToDetails(context);
-              },
             ),
           );
         },
@@ -53,7 +76,7 @@ class CatsList extends StatelessWidget {
     );
   }
 
-  void _goToDetails(BuildContext context) {
-    Navigator.of(context).pushNamed(CustomRoutes.catsDetails);
+  void _goToDetails(BuildContext context, Cat cat) {
+    Navigator.of(context).pushNamed(CustomRoutes.catsDetails, arguments: CatDetailsArguments(cat: cat));
   }
 }

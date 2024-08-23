@@ -1,3 +1,4 @@
+import 'package:cats_app/features/cats/presentation/pages/splash_screen.dart';
 import 'package:cats_app/features/core/utils/custom_arguments.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,8 @@ class CustomNavigator {
     final route = settings.name?.split('/');
     if (route != null) {
       switch (route[0]) {
+        case CustomRoutes.splash:
+          return defaultRoute(const SplashScreen());
         case CustomRoutes.home:
           return defaultRoute(const HomePage());
         case CustomRoutes.catsDetails:

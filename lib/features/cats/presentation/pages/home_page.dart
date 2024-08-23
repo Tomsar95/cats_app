@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:cats_app/features/cats/presentation/widgets/cats/cats_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,55 +47,29 @@ class _HomePageState extends State<HomePage> {
 
   Widget buildContent(List<Cat> cats, BuildContext context) {
     return Scaffold(
-      backgroundColor: CustomColors.transparent,
-      body: Stack(
+      backgroundColor: CustomColors.lightGray,
+      appBar: AppBar(
+        title: const Text('Catbreeds'),
+        backgroundColor: CustomColors.lightGray,
+      ),
+      body: Column(
         children: [
-          ShaderMask(
-            shaderCallback: (rect) {
-              return const LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [0.1,1],
-                colors: [CustomColors.softBlack, CustomColors.transparent],
-              ).createShader(Rect.fromLTRB(0, 0, rect.width, rect.height));
-            },
-            blendMode: BlendMode.dstIn,
-            child: Container(
-              decoration: setDecoration(),
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                child: Container(
-                  decoration:
-                  BoxDecoration(color: CustomColors.black.withOpacity(0.5)),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Buscar...',
+                prefixIcon: const Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
               ),
+              onChanged: (value) {
+                context.read<CatsBloc>().add(SearchCatsEvent(value));
+              },
             ),
           ),
-          Scaffold(
-            appBar: AppBar(
-              title: Text('Catbreeds'),
-            ),
-            body: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: 'Buscar...',
-                      prefixIcon: Icon(Icons.search),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                    onChanged: (value) {
-                      // Aquí puedes agregar la lógica para filtrar la lista de gatos
-                    },
-                  ),
-                ),
-                CatsList(catsList: cats),
-              ],
-            ),
-          ),
+          CatsList(catsList: cats),
         ],
       ),
     );

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Catbreeds',
-      theme: ThemeData(primaryColor: CustomColors.black),
+      theme: ThemeData(primaryColor: CustomColors.lightGray),
       home: const HomePage(),
       initialRoute: CustomRoutes.splash,
       onGenerateRoute: CustomNavigator.routes,

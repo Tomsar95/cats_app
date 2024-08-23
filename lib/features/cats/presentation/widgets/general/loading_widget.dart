@@ -7,7 +7,7 @@ Widget loading() {
     children: [
       Expanded(
         child: Container(
-          color: CustomColors.softBlack,
+          color: CustomColors.lightGray,
           child: const Center(
             child: SizedBox(
               height: 30,
