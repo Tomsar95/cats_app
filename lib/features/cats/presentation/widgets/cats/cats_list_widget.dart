@@ -25,7 +25,7 @@ class CatsList extends StatelessWidget {
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.zero,
                 side: BorderSide(
-                  color: Colors.black,
+                  color: CustomColors.black,
                   width: 1.0,
                 ),
               ),

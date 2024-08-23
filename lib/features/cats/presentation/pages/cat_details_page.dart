@@ -20,8 +20,8 @@ class CatDetailsPage extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        backgroundColor: CustomColors.lightGray, // Fondo transparente para la AppBar
-        elevation: 0, // Sin sombra para la AppBar
+        backgroundColor: CustomColors.lightGray,
+        elevation: 0,
       ),
       body: Column(
         children: [
