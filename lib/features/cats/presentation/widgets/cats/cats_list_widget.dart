@@ -3,7 +3,7 @@ import 'package:cats_app/features/core/utils/custom_arguments.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/custom_colors.dart';
-import '../../../../core/utils/custom_navigator.dart';// Asegúrate de importar el modelo correcto
+import '../../../../core/utils/custom_navigator.dart';
 
 class CatsList extends StatelessWidget {
   final List<Cat> catsList;
