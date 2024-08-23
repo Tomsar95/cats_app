@@ -1,3 +1,3 @@
 class GeneralAssets {
-  static const String loginBackGround = 'assets/images/witcher_bg.jpeg';
+  static const String splashCat = 'assets/images/splash_cat.jpeg';
 }
