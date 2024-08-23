@@ -30,6 +30,7 @@ MaterialPageRoute defaultRoute<T extends Widget>(T child) {
 }
 
 class CustomRoutes {
+  static const String splash = "splash";
   static const String home = "home";
   static const String catsDetails = "detail";
 }

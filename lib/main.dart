@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Catbreeds',
       theme: ThemeData(primaryColor: CustomColors.black),
       home: const HomePage(),
+      initialRoute: CustomRoutes.splash,
       onGenerateRoute: CustomNavigator.routes,
       onUnknownRoute: (_) => defaultRoute(const HomePage()),
     );

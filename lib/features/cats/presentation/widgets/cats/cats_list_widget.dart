@@ -1,5 +1,7 @@
 import 'package:cats_app/features/cats/domain/entities/cat.dart';
-import 'package:flutter/material.dart';// Asegúrate de importar el modelo correcto
+import 'package:flutter/material.dart';
+
+import '../../../../core/utils/custom_navigator.dart';// Asegúrate de importar el modelo correcto
 
 class CatsList extends StatelessWidget {
   final List<Cat> catsList;
@@ -42,12 +44,16 @@ class CatsList extends StatelessWidget {
                 ],
               ),
               onTap: () {
-                // Aquí puedes manejar el evento cuando se presiona un item
+                _goToDetails(context);
               },
             ),
           );
         },
       ),
     );
+  }
+
+  void _goToDetails(BuildContext context) {
+    Navigator.of(context).pushNamed(CustomRoutes.catsDetails);
   }
 }
