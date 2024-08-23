@@ -32,7 +32,7 @@ class SplashScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 20.0, top: 100.0, bottom: 50),
                 child: SvgPicture.asset(
                   'assets/images/splash_cat.svg',
-                  width: 150.0, // Ajusta el tamaño de la imagen si es necesario
+                  width: 150.0,
                   height: 150.0,
                 ),
               ),
