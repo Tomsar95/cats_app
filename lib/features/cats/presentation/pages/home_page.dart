@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
             return buildContent(state.listOfCats, context);
           } else if (state is ErrorState) {
             return MessageDisplay(
-              message: 'state.message',
+              message: state.message,
               onRetry: () {
                 context.read<CatsBloc>().add(GetCatsEvent());
               },
