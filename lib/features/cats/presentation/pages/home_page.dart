@@ -24,9 +24,7 @@ class _HomePageState extends State<HomePage> {
       child: BlocBuilder<CatsBloc, CatsState>(
         builder: (context, state) {
           if (state is CatsInitial) {
-            context
-                .read<CatsBloc>()
-                .add(GetCatsEvent());
+            context.read<CatsBloc>().add(GetCatsEvent());
             return SizedBox(
               height: MediaQuery.of(context).size.height * 0.6,
               child: loading(),
@@ -34,7 +32,12 @@ class _HomePageState extends State<HomePage> {
           } else if (state is LoadedCatsState) {
             return buildContent(state.listOfCats, context);
           } else if (state is ErrorState) {
-            return MessageDisplay(message: state.message);
+            return MessageDisplay(
+              message: 'state.message',
+              onRetry: () {
+                context.read<CatsBloc>().add(GetCatsEvent());
+              },
+            );
           }
           return SizedBox(
             height: MediaQuery.of(context).size.height / 3,

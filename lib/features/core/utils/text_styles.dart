@@ -5,7 +5,7 @@ import 'custom_colors.dart';
 
 class CustomTextStyles {
   static const TextStyle _baseFont = TextStyle(
-    color: CustomColors.white,
+    color: CustomColors.black,
     fontWeight: FontWeight.w400,
     fontFamily: 'Gilroy',
     fontStyle: FontStyle.normal,
