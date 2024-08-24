@@ -1,0 +1,54 @@
+[
+  {
+    "id": "siam",
+    "name": "Siamese",
+    "origin": "Thailand",
+    "description": "Siamese cats are known for their sociable, vocal nature. They are affectionate with their owners and typically good with children. They are intelligent, curious, and tend to follow their owners around.",
+    "temperament": "Active, Agile, Clever, Sociable, Loving",
+    "life_span": "8 - 12",
+    "adaptability": 5,
+    "affection_level": 5,
+    "child_friendly": 4,
+    "intelligence": 5,
+    "energy_level": 4
+  },
+  {
+    "id": "beng",
+    "name": "Bengal",
+    "origin": "United States",
+    "description": "Bengals are a lot of fun to live with, but they're definitely not the cat for everyone, or for first-time cat owners. Extremely intelligent, curious and active, they demand a lot of interaction.",
+    "temperament": "Alert, Agile, Energetic, Demanding, Intelligent",
+    "life_span": "12 - 15",
+    "adaptability": 5,
+    "affection_level": 5,
+    "child_friendly": 4,
+    "intelligence": 5,
+    "energy_level": 5
+  },
+  {
+    "id": "maine",
+    "name": "Maine Coon",
+    "origin": "United States",
+    "description": "Maine Coons are one of the largest domesticated cat breeds. They are known for their gentle and friendly nature. They are playful, affectionate, and good with children. Their thick fur requires regular grooming.",
+    "temperament": "Gentle, Friendly, Intelligent, Playful",
+    "life_span": "12 - 15",
+    "adaptability": 5,
+    "affection_level": 5,
+    "child_friendly": 5,
+    "intelligence": 4,
+    "energy_level": 4
+  },
+  {
+    "id": "sphy",
+    "name": "Sphynx",
+    "origin": "Canada",
+    "description": "Sphynx cats are known for their lack of fur and their friendly, playful nature. They are very social, and enjoy interacting with their owners and other pets. Despite their tough exterior, they are soft-hearted and love to cuddle.",
+    "temperament": "Affectionate, Friendly, Playful, Intelligent",
+    "life_span": "8 - 14",
+    "adaptability": 5,
+    "affection_level": 5,
+    "child_friendly": 4,
+    "intelligence": 5,
+    "energy_level": 4
+  }
+]

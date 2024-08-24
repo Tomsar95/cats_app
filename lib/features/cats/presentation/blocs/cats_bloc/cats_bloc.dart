@@ -4,6 +4,7 @@ import 'package:cats_app/features/cats/domain/entities/cat.dart';
 import 'package:bloc/bloc.dart';
 
 import '../../../../core/usecases/usecase.dart';
+import '../../../../core/utils/utils.dart';
 
 part 'cats_event.dart';
 
@@ -24,7 +25,7 @@ class CatsBloc
         final catsOrFailure = await getCats(NoParams());
         await catsOrFailure.fold((failure) {
           emit(const ErrorState(
-              message: 'Ops,an error occurred loading your data'));
+              message: Utils.serverFailureMessage));
         }, (cats) async {
           allCats = cats;
           emit(LoadedCatsState(listOfCats: cats));
