@@ -46,7 +46,8 @@ class CatDetailsPage extends StatelessWidget {
                     ),
                     CatAttributeInfoWidget(
                       title: 'Temperamento:',
-                      content: cat.temperament ?? 'No temperament info available.',
+                      content:
+                          cat.temperament ?? 'No temperament info available.',
                     ),
                     CatAttributeInfoWidget(
                       title: 'País de Origen:',
@@ -58,19 +59,23 @@ class CatDetailsPage extends StatelessWidget {
                     ),
                     CatAttributeInfoWidget(
                       title: 'Adaptabilidad:',
-                      content: cat.adaptability?.toString() ?? 'No adaptability info available.',
+                      content: cat.adaptability?.toString() ??
+                          'No adaptability info available.',
                     ),
                     CatAttributeInfoWidget(
                       title: 'Nivel de afecto:',
-                      content: cat.affectionLevel?.toString() ?? 'No affection level info available.',
+                      content: cat.affectionLevel?.toString() ??
+                          'No affection level info available.',
                     ),
                     CatAttributeInfoWidget(
                       title: 'Inteligencia:',
-                      content: cat.intelligence?.toString() ?? 'No intelligence info available.',
+                      content: cat.intelligence?.toString() ??
+                          'No intelligence info available.',
                     ),
                     CatAttributeInfoWidget(
                       title: 'Vocalización:',
-                      content: cat.vocalisation?.toString() ?? 'No vocalisation info available.',
+                      content: cat.vocalisation?.toString() ??
+                          'No vocalisation info available.',
                     ),
                   ],
                 ),
@@ -82,5 +87,3 @@ class CatDetailsPage extends StatelessWidget {
     );
   }
 }
-
-
