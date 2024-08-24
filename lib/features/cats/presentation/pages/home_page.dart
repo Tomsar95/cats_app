@@ -74,11 +74,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-  BoxDecoration setDecoration() {
-    return BoxDecoration(
-      borderRadius: BorderRadius.circular(40.0),
-      gradient: CustomColors.backGroundGradient,
-    );
-  }
 }
