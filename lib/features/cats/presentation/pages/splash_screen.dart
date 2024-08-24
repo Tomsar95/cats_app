@@ -29,7 +29,8 @@ class SplashScreen extends StatelessWidget {
               ),
               const SizedBox(height: 100.0),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0, top: 100.0, bottom: 50),
+                padding:
+                    const EdgeInsets.only(left: 20.0, top: 100.0, bottom: 50),
                 child: SvgPicture.asset(
                   'assets/images/splash_cat.svg',
                   width: 150.0,
