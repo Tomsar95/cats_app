@@ -10,8 +10,7 @@ part 'cats_event.dart';
 
 part 'cats_state.dart';
 
-class CatsBloc
-    extends Bloc<CatsEvent, CatsState> {
+class CatsBloc extends Bloc<CatsEvent, CatsState> {
   final GetCats getCats;
 
   List<Cat> allCats = [];
@@ -24,8 +23,7 @@ class CatsBloc
         emit(const CatsInitial(isLoading: true));
         final catsOrFailure = await getCats(NoParams());
         await catsOrFailure.fold((failure) {
-          emit(const ErrorState(
-              message: Utils.serverFailureMessage));
+          emit(const ErrorState(message: Utils.serverFailureMessage));
         }, (cats) async {
           allCats = cats;
           emit(LoadedCatsState(listOfCats: cats));
